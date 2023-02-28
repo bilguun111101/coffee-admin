@@ -1,10 +1,14 @@
 import React, { lazy, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Layout from './Layout';
+// import Layout from './Layout';
+// import Main from './Main/Main';
+// import LogIn from "./LogIn/LogIn";
+// import SignUp from "./SignUp/SignUp";
 
 const Main = lazy(() => import("./Main/Main"));
-const LogIn = lazy(() => import("./LogIn/LogIn"))
 const SignUp = lazy(() => import("./SignUp/SignUp"))
+const LogIn = lazy(() => import("./LogIn/LogIn"));
+const Layout = lazy(() => import("./Layout"));
 
 const PagesRouter = () => {
     const [user, setUser] = useState(true);
@@ -12,15 +16,9 @@ const PagesRouter = () => {
     <Router>
         <Layout>
             <Routes>
-                <Route path='/' element={<Main />} />
-                {
-                    user ? (
-                        <>
-                            <Route path='/login' element={<LogIn />} />
-                            <Route path='/signup' element={<SignUp />} />
-                        </>
-                    ) : <></>
-                }
+                <Route path='/' element={<Main />}></Route>
+                <Route path='/login' element={<LogIn />} />
+                <Route path='/signup' element={<SignUp />} />
             </Routes>
         </Layout>
     </Router>
