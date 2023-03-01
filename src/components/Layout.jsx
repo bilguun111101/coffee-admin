@@ -30,7 +30,7 @@ const NavbarBtn = (props) => {
     }
     return (
         <button 
-            className={`w-full rounded-lg flex items-center gap-3 px-3 py-2 ${active_button[index] && "backdrop-blur-lg"} opacity-${active_button[index] ? 100 : 70} duration-200`}
+            className={`w-full rounded-lg flex items-center gap-3 px-3 py-2 ${active_button[index] && "backdrop-blur-lg"} opacity-${active_button[index] ? 100 : 70} duration-200 z-10`}
             style={{ backgroundColor: active_button[index] && 'rgba(255, 255, 255, 0.2)' }}
             onClick={click}
         >
